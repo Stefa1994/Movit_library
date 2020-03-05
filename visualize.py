@@ -87,9 +87,6 @@ def get_active_trips(image_time, bike_data, image_shape, line_len = .1):
         a = tuple(a)
         xys.append(a)
         flag = flag +1
-    #start_latitude, start_longitude = get_current_position(active_trips, np.clip(progress-line_len, 0, 1))
-    #start_y, start_x = latlon_to_pixel(start_latitude, start_longitude, image_shape, bounds)
-    #xys = list(zip(start_x, start_y, end_x, end_y))
     weights = np.clip((1 - progress.values)*100, 0, 1)
     return xys, weights
 
